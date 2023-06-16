@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+body {
+    margin: 0px;
+    background: #223339;
+}
+
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: white;
+    font-family: 'Amatic SC', cursive;
+    font-size: 60px;
+    padding: 10px;
+}
+
+.body_container1 {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    color: white;
+    font-family: 'Amatic SC', cursive;
+}
+
+.main_text {
+    font-size: 50px;
+}
+
+.sub_text {
+    font-size: 30px;
+}
+
+.body_container2 {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+.player_container, .computer_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 28px;
+    color: white;
+    font-family: 'Amatic SC', cursive;
+}
+
+img {
+    background: white;
+    border: 8px solid white;
+    border-radius: 25%;
+    width: 200px;
+    height: 200px;
+}
+
+.choice_container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+
+.paper, .rock, .scissor {
+    transition: transform 0.7s;
+}
+
+.paper:hover , .rock:hover, .scissor:hover {
+    transform: scale(1.2);
+
+}
