@@ -34,5 +34,107 @@
         <img src = "paper.jpeg" class = "paper">
         <img src = "scissor.jpeg" class = "scissor">
     </div>
+
+    <div class = "message_container"> </div>
+
+    <script>
+        var player_score = 0;
+        var computer_score = 0;
+
+        function updateScore(num) {
+            const p_score = document.querySelector(".player_score");
+            const c_score = document.querySelector(".computer_score");
+
+            if(num === 1) {
+                player_score++;
+                p_score.textContent = `Player score: ${player_score}`;
+            } else if(num === 2) {
+                computer_score++;
+                c_score.textContent = `Computer score: ${computer_score}`;
+            }
+           
+        }
+
+        function computer_choice() {
+            let num = Math.floor(Math.random() * 3);
+            if(num === 0) return "rock";
+            else if(num === 1) return "paper";
+            else return "scissor";
+        }
+
+        function chooseWinner(player, computer) {
+            if(player === computer) return 0;
+            else {
+                if(player === "rock") {
+                    if(computer === "scissor") return 1;
+                    else return 2;
+                } else if(player === "paper") {
+                    if(computer === "rock") return 1;
+                    else return 2;
+                } else {
+                    if(computer === "paper") return 1;
+                    else return 2;
+                }
+            }
+        }
+
+
+        function play_game() {
+            
+            const container = document.querySelector(".choice_container");
+
+            
+            container.addEventListener("click" , function(e) {
+                if(player_score < 5 && computer_score < 5) {
+                    if(e.target.className === "rock" || e.target.className === "paper" || e.target.className === "scissor") {
+                        const player_img = document.querySelector(".player_choice");
+                        const computer_img = document.querySelector(".computer_choice");
+
+                    
+                        let c_choice = computer_choice();
+                        player_img.src = `${e.target.className}.jpeg`;
+                        computer_img.src = `${c_choice}.jpeg`;
+                    
+                
+                        updateScore(chooseWinner(e.target.className , c_choice));
+                    
+                    } 
+                }
+
+                const message = document.createElement('div');
+                const message_container = document.querySelector(".message_container");
+
+                if(player_score === 5) {
+                    message.textContent = "Player Wins!";
+                } else if (computer_score == 5) {
+                    message.textContent = "Computer Wins :("
+                }
+
+                message_container.appendChild(message);
+
+
+                
+            });
+
+            
+
+            
+
+            
+        }
+
+
+        play_game();
+        
+        
+
+
+
+
+
+
+    </script>
+
+   
 </body>
 </html>

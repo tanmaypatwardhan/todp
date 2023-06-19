@@ -75,3 +75,13 @@ img {
     transform: scale(1.2);
 
 }
+
+.message_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 36px;
+    color: white;
+    font-family: 'Amatic SC' , cursive;
+}
