@@ -35,6 +35,9 @@
     flex-direction: column;
     gap: 10px;
     background: #fde74c;
+    min-width: 308px;
+    min-height: 546px;
+
     max-width: 308px;
     max-height: 546px;
 }
@@ -124,8 +127,11 @@ input[type="range"]::-webkit-slider-thumb:hover {
 
 
 .grid-container {
-    width: 720px;
-    height: 720px;
+    min-width: 720px;
+    min-height: 720px;
+
+    max-width: 720px;
+    max-height: 720px;
     display: flex;
     flex-wrap: wrap;
     border: 3px solid black;
