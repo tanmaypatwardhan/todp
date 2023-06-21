@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch A Sketch</title>
+    <script src = "script.js" defer ></script>
+    <link rel="stylesheet" href="style.css">     
+</head>
+<body>
+    <div class = header>
+        <div class = "title">Etch-a-sketch</div>
+    </div>
+
+    <div class = container>
+        <div class = user_options>
+            <div class = colorpicker-container>
+                
+                <input type = "color" class = "colorpicker" value = "#000000">
+                <label for = "colorpicker">Pen Color</label>
+            </div>
+            
+            <div class = backgroundpicker-container>
+                <input type = "color" class = "backgroundpicker" value = "#ffffff">
+                <label for = "backgroundpicker">Background Color </label>
+            </div>
+
+            <div class = "buttons-container">
+                <button type = "button" class = "button rainbow">Rainbow</button>
+                <button type = "button" class = "button shade">Shade</button>
+                <button type = "button" class = "button lighten">Lighten</button>
+                <button type = "button" class = "button erase">Erase</button>
+                <button type = "button" class = "clear">Clear</button>
+            </div>
+
+            <div class = "slider-container">
+                <input type = "range" min = "16" max = "64" value = "16" class = "slider">
+                <div class = "dimensions">16 X 16</div>
+            </div>
+            
+        </div>
+
+        <div class = grid-container>
+
+        </div>
+    </div>
+</body>
+</html>

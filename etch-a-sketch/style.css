@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+* {
+    font-family: 'Amatic SC' , cursive;
+}
+.body {
+    background: #e5e9ec;
+    
+}
+
+.container {
+    display: flex;
+    
+    gap: 35px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    font-size: 75px;
+    font-family: 'Amatic SC' , cursive;
+}
+
+.user_options {
+    padding: 15px;
+    margin-top: 25px;
+    margin-left: 15px;
+    width: 25%;
+    border: 4px solid black;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #fde74c;
+    max-width: 308px;
+    max-height: 546px;
+}
+
+.colorpicker, .backgroundpicker {
+    width: 135px;
+    height: 45px;
+    margin-bottom: 3px;
+    margin-right: 5px;
+}
+
+label {
+    font-family: 'Amatic SC' , cursive;
+    font-size: 30px;
+}
+
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    background-color: white;
+    border: 2px solid black;
+    padding: 0px;
+    padding: 3px;
+    font-size: 45px;
+    border-radius: 6px;
+    transition-duration: 1s;
+}
+
+.button:hover , .clicked {
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+
+.clear:hover {
+    transform: scale(1.07);
+}
+
+.slider-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 76%;
+    background: transparent;
+    cursor: pointer;
+    margin: 0px;
+    
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: white;
+    height: 4px;
+    border: 2px solid black;
+    border-radius: 6px;
+    height: 14px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   appearance: none;
+   margin-top: -7px;
+   background-color: #fde74c;
+   height: 24px;
+   width: 24px;
+   border: 2px solid black;
+   border-radius: 50%;
+   transition-duration: 0.7s; 
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background-color: black;
+}
+
+.dimensions {
+    font-size: 35px;
+}
+
+
+.grid-container {
+    width: 720px;
+    height: 720px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px solid black;
+}
+
