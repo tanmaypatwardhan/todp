@@ -72,7 +72,7 @@ function create_grid(value1) {
 }
 
 //Changing the grid size
-slider.onmousedown = () => {
+slider.onmousedown = () =>  {
     remove_grid(slider.value);
 }
 
