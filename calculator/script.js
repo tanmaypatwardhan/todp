@@ -1,4 +1,3 @@
-//expression: 7 + 2 * 3 + 2
 
 function precedence(a , b) {
     if ((a === '*' || a === "/") && (b === '+' || b === '-')) return true;
@@ -9,8 +8,7 @@ function isOperator(char) {
     return char === '+' || char === '-' || char === '/' || char === '*';
 }
 
-function toPostfix(str1) {
-    let str = str1.split(" ");
+function toPostfix(str) {
     let result = [];
     let arr = [];
 
@@ -55,8 +53,25 @@ function evaluate(str) {
         }
     }
     return arr[0];
-   
 }
+
+
+
+let expression = [];
+let curr_string = "";
+const buttons = document.querySelectorAll("button");
+
+function validForExpression(str) {
+    return str !== "AC" && str !== "C" && str !== "plus_minus" && str !== "equals";
+}
+
+buttons.forEach(button => {
+    button.addEventListener('click' , (e) => {
+
+    });
+});
+
+
 
 
 
