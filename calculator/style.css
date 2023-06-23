@@ -1,0 +1,86 @@
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FF9500;
+}
+
+.container {
+    align-self: center;
+    background: #1C1C1C;
+    min-width: 400px;
+    min-height: 650px;
+    border: 5px solid #D4D4D2;
+    border-radius: 20px;
+    padding-top: 15px;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display {
+    background: #505050;
+    width: 92%;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.button-container {
+    display: flex;
+    width: 92%;
+    height: 530px;
+    gap: 5px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    
+}
+
+.first_four, .second_four, .third_four, .fourth_four {
+    width: 100%;
+    height: 18%;
+}
+
+button {
+    background: #D4D4D2;
+    width: 24%;
+    height: 100%;
+    border: none;
+    border-radius: 50%;
+    color: #1C1C1C;
+    text-align:center;
+    text-decoration:none;
+    font-size:30px;
+    font-weight:bold;
+    
+    transition-duration: 0.3s;
+}
+
+button:hover {
+    transform: translate(0px, -5px);
+    background: #FF9500;
+}
+
+.divide, .multiply, .add , .subtract {
+    background: #FF9500;
+}
+
+.divide:hover, .multiply:hover, .add:hover, .subtract:hover {
+    background: #D4D4D2;
+}
+
+
+.AC:hover {
+    background: #ff6961;
+}
+
+.C:hover {
+    background: #99c5c4;
+}
