@@ -1,6 +1,6 @@
 
 function precedence(a , b) {
-    if ((a === '*' || a === "/") && (b === '+' || b === '-')) return true;
+    if ((a === "*" || a === "/") && (b === "+" || b === "-")) return true;
     else return false;
 }
 
@@ -62,14 +62,56 @@ let curr_string = "";
 const buttons = document.querySelectorAll("button");
 
 function validForExpression(str) {
-    return str !== "AC" && str !== "C" && str !== "plus_minus" && str !== "equals";
+    return str !== "AC" && str !== "C" && str !== "plus_minus" && str !== "equal" && str !== "point";
 }
 
+function isOperatorClass(name) {
+    return name === "multiply" || name === "subtract" || name === "divide" || name === "add";
+}
+
+const map = {
+    zero: 0,
+    one: 1,
+    two: 2,
+    three: 3,
+    four: 4,
+    five: 5,
+    six: 6,
+    seven: 7,
+    eight: 8,
+    nine: 9,
+    
+}
+
+
+
+const display_top = document.querySelector(".display_top");
+const display_bottom = document.querySelector("display_bottom")
 buttons.forEach(button => {
     button.addEventListener('click' , (e) => {
-
+       
+        let className = e.target.className;
+        if(validForExpression(className) && !isOperatorClass(className)) {
+            curr_string+=map[className];
+        } else if(validForExpression(className) && isOperatorClass(className)) {
+            expression.push(curr_string);
+            curr_string = "";
+            if(className === "multiply") expression.push("*");
+            else if(className === "add") expression.push("+");
+            else if(className === "subtract") expression.push("-");
+            else expression.push("/");
+        } else if(className === "equal") {
+            expression.push(curr_string);
+            let num = evaluate(toPostfix(expression));
+            
+            expression = [];
+            curr_string = "";
+            console.log(expression);
+        }
     });
 });
+
+
 
 
 
