@@ -86,28 +86,62 @@ const map = {
 
 
 const display_top = document.querySelector(".display_top");
-const display_bottom = document.querySelector("display_bottom")
+const display_bottom = document.querySelector(".display_bottom");
 buttons.forEach(button => {
     button.addEventListener('click' , (e) => {
        
         let className = e.target.className;
         if(validForExpression(className) && !isOperatorClass(className)) {
             curr_string+=map[className];
+
+            if(expression.length === 0) display_top.textContent = curr_string + " ";
+            else {
+                display_top.textContent = "";
+                for(let i = 0; i < expression.length; i++) {
+                    if(expression[i] === "*") {
+                        display_top.textContent+=("×" + " ");
+                    } else if(expression[i] === "/") {
+                        display_top.textContent +=("÷" + " ");
+                    } else  {
+                        display_top.textContent+=(expression[i] + " ");
+                    }
+                   
+                }
+
+                display_top.textContent+= (curr_string + " ");
+            }
+            
         } else if(validForExpression(className) && isOperatorClass(className)) {
             expression.push(curr_string);
             curr_string = "";
-            if(className === "multiply") expression.push("*");
-            else if(className === "add") expression.push("+");
-            else if(className === "subtract") expression.push("-");
-            else expression.push("/");
+            if(className === "multiply") {
+                display_top.textContent+=("×" + " ");
+                expression.push("*");
+            } else if(className === "add") {
+                display_top.textContent+=("+" + " ");
+                expression.push("+");
+            } else if(className === "subtract") {
+                display_top.textContent+=("-" + " ");
+                expression.push("-");
+            } else {
+                display_top.textContent +=("÷" + " ");
+                expression.push("/");
+            }  
         } else if(className === "equal") {
             expression.push(curr_string);
             let num = evaluate(toPostfix(expression));
-            
+            display_bottom.textContent = num;
             expression = [];
             curr_string = "";
-            console.log(expression);
+            
+        } else if(className === "AC") {
+            display_top.textContent = "";
+            display_bottom.textContent = "";
+            curr_string = "";
+            expression = [];
         }
+
+        
     });
 });
 

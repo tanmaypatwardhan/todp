@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant&display=swap');
 
 html, body {
     margin: 0;
@@ -30,7 +31,10 @@ body {
     width: 92%;
     height: 60px;
     color: white;
-
+    font-size: 35px;
+    text-align: right;
+    padding-right: 10px;
+    font-family: 'Ysabeau Infant', sans-serif;
 }
 
 
