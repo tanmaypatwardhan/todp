@@ -37,6 +37,17 @@ body {
     font-family: 'Ysabeau Infant', sans-serif;
 }
 
+.display_top {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.display_bottom {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top: 1px solid #505050;
+}
+
 
 
 .button-container {

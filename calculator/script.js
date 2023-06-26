@@ -26,7 +26,6 @@ function toPostfix(str) {
             }
         }
     }
-
     while(arr.length > 0) {
         let curr = arr.pop();
         result.push(curr);
@@ -87,6 +86,7 @@ const map = {
 
 const display_top = document.querySelector(".display_top");
 const display_bottom = document.querySelector(".display_bottom");
+let dot = false;
 buttons.forEach(button => {
     button.addEventListener('click' , (e) => {
        
@@ -113,6 +113,9 @@ buttons.forEach(button => {
             
         } else if(validForExpression(className) && isOperatorClass(className)) {
             expression.push(curr_string);
+
+            if(display_bottom.textContent !== "") display_top.textContent = curr_string + " ";
+            
             curr_string = "";
             if(className === "multiply") {
                 display_top.textContent+=("×" + " ");
@@ -130,16 +133,45 @@ buttons.forEach(button => {
         } else if(className === "equal") {
             expression.push(curr_string);
             let num = evaluate(toPostfix(expression));
-            display_bottom.textContent = num;
+            if(num === Infinity) {
+                display_bottom.textContent = "Invalid";
+            } else {
+                
+                num = num.toFixed(2).replace(/\.00$/, '');
+                display_bottom.textContent = num;
+                curr_string = num;
+            }
+            
             expression = [];
-            curr_string = "";
+            
             
         } else if(className === "AC") {
             display_top.textContent = "";
             display_bottom.textContent = "";
             curr_string = "";
             expression = [];
-        }
+        } else if(className === "C") {
+            if(curr_string.length > 0) curr_string = "";
+            else expression.pop();
+
+            if(display_bottom.textContent !== "") {
+                curr_string = "";
+                display_bottom.textContent = "";
+            } 
+            
+            display_top.textContent = "";
+            for(let i = 0; i < expression.length; i++) {
+                if(expression[i] === "*") {
+                    display_top.textContent+=("×" + " ");
+                } else if(expression[i] === "/") {
+                    display_top.textContent +=("÷" + " ");
+                } else  {
+                    display_top.textContent+=(expression[i] + " ");
+                }
+                   
+            }
+
+        } 
 
         
     });
