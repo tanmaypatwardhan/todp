@@ -174,13 +174,11 @@ buttons.forEach(button => {
                 } else  {
                     display_top.textContent+=(expression[i] + " ");
                 }
-                   
             }
 
         } else if(className === "plus_minus") {
             if(curr_string[0] !== "-") curr_string = "-" + curr_string;
             else curr_string = curr_string.substring(1);
-
             display_top.textContent = display(curr_string, expression);
         } 
 
